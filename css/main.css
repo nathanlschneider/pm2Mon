@@ -1,0 +1,23 @@
+body{
+background-color: #232323;
+}
+
+header {
+    font-family: 'Ubuntu', sans-serif;
+    color:white;
+    /* background-color: #454545; */
+    padding: 1px;
+    margin: 5px 20px;
+}
+.module {
+    font-family: 'Ubuntu', sans-serif;
+    color:white;
+    background-color: #454545;
+    padding: 20px;
+    margin: 5px;
+    
+}
+
+span {
+    margin-left: 20px;
+}
