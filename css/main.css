@@ -9,15 +9,76 @@ header {
     padding: 1px;
     margin: 5px 20px;
 }
+
+#menuBar {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Ubuntu', sans-serif;
+    color:white;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700px;
+    
+    
+    /* menubar gradient */
+    background: rgb(0,139,249);
+    background: -moz-linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
+    background: -webkit-linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008bf9",endColorstr="#fcb045",GradientType=1);
+}
+
 .module {
+    display: flex;
     font-family: 'Ubuntu', sans-serif;
     color:white;
     background-color: #454545;
-    padding: 20px;
-    margin: 5px;
-    
+ padding-top: 15px;
+ padding-bottom: 15px;
+ padding-left: 10px;
+ margin-bottom: 10px;
+ margin-top: 10px;
+
 }
 
-span {
-    margin-left: 20px;
+.name {
+    flex-basis: 200px;
 }
+
+.id {
+    flex-basis: 50px;
+}
+
+.mode {
+    flex-basis: 100px;
+}
+
+.pid {
+    flex-basis: 50px;
+}
+
+.status {
+    flex-basis: 100px;
+}
+
+.restarts {
+flex-basis: 75px; 
+}
+
+.uptime {
+    flex-basis: 150px;
+}
+.cpu {
+    flex-basis: 50px;
+}
+.mem {
+    flex-basis: 100px;
+}
+
+.btn {
+   margin-left: auto;
+   padding-right: 10px;
+}
+
+
