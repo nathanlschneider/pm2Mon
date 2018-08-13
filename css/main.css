@@ -9,6 +9,20 @@ header {
     padding: 1px;
     margin: 5px 20px;
 }
+.content {
+    flex: 1 0 auto;
+  }
+footer {
+    flex-shrink: 0;
+
+    width: 100%;
+    height: 100px;
+    background: rgb(0,139,249);
+    background: -moz-linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
+    background: -webkit-linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008bf9",endColorstr="#fcb045",GradientType=1);
+}
 
 #menuBar {
     display: flex;
@@ -18,7 +32,7 @@ header {
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-weight: 700px;
+    font-weight: 700;
     
     
     /* menubar gradient */
@@ -51,11 +65,11 @@ header {
 }
 
 .mode {
-    flex-basis: 100px;
+    flex-basis: 125px;
 }
 
 .pid {
-    flex-basis: 50px;
+    flex-basis: 75px;
 }
 
 .status {
@@ -63,14 +77,14 @@ header {
 }
 
 .restarts {
-flex-basis: 75px; 
+flex-basis: 100px; 
 }
 
 .uptime {
-    flex-basis: 150px;
+    flex-basis: 125px;
 }
 .cpu {
-    flex-basis: 50px;
+    flex-basis: 75px;
 }
 .mem {
     flex-basis: 100px;
@@ -78,7 +92,7 @@ flex-basis: 75px;
 
 .btn {
    margin-left: auto;
-   padding-right: 10px;
+   padding-right: 5vw;
 }
 
 
