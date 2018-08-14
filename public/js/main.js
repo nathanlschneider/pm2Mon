@@ -140,6 +140,11 @@ var app = (function () {
         })
         .catch(function (error) {
             console.log(error);
+            var content = document.getElementById('content');
+            var contents = document.createElement('h1');
+            contents.classList = "error";
+            contents.innerText = error;
+            content.appendChild(contents);
         });
 
 
