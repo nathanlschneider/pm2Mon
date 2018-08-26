@@ -1,179 +1,220 @@
+body {
+  background-color: #232323;
+  display: flex;
+  flex-direction: column;
+}
 
-body{
-    background-color: #232323;
-    display: flex;
-    flex-direction: column;
+.online {
+  color: lime;
+}
+
+.offline {
+  color: grey;
+}
+
+.stopped {
+  color: red;
+}
+
+.cluster {
+  color: rgb(191, 201, 255);
+}
+
+.fork {
+  color: hsl(184, 100%, 50%);
 }
 
 button {
-    border: 2px solid white;
-    color: white;
-    background-color: #00000000;
-    margin-right: 10px;
-    padding: 5px 20px 5px 20px;
-    border-radius: .25rem;
-    letter-spacing: 2px;
-    line-height: 10px;
-    top: -10px;
-    transition: all .1s;
+  display: none;
+  border: 2px solid white;
+  color: white;
+  background-color: #00000000;
+  margin-right: 10px;
+  padding: 5px 20px 5px 20px;
+  border-radius: 0.25rem;
+  letter-spacing: 2px;
+  line-height: 10px;
+  top: -10px;
+  transition: all 0.1s;
 }
 
 button:hover {
-    background-color: white;
-    color: #454545;
-    transform: scale(.9);
+  background-color: white;
+  color: #454545;
+  transform: scale(0.9);
 }
 
 button:active {
-    transform: skew(10deg);
+  transform: skew(10deg);
 }
 
 @media only screen and (max-width: 1135px) {
-    .btn {
-        /* display: none; */
-        transition-duration: .3s;
-        opacity: 0;
-
-    }
+  .btn {
+    /* display: none; */
+    transition-duration: 0.3s;
+    opacity: 0;
+  }
 }
 .logo {
-    position: absolute;
-    z-index: 2;   
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%); 
-    transition: all 1s;
+  position: absolute;
+  z-index: 2;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  transition: all 1s;
 }
 
-.logo:hover{
-    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(0%);
-    transform: skew(3deg);
+.logo:hover {
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(0%);
+  transform: skew(3deg);
 }
 
 img:nth-of-type(1) {
-    left: 10px;
-    height: 45px;
-    width: 45px;
-    top: 25px;
+  left: 10px;
+  height: 45px;
+  width: 45px;
+  top: 25px;
 }
 img:nth-of-type(2) {
-    left: 55px;
-    height: 65px;
-    width: 65px;
-    top: 15px;
+  left: 55px;
+  height: 65px;
+  width: 65px;
+  top: 15px;
 }
 
 header {
-    font-family: 'Ubuntu', sans-serif;
-    color:white;
-    /* background-color: #454545; */
-    padding: 1px;
-    margin: 5px 20px;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  /* background-color: #454545; */
+  padding: 1px;
+  margin: 5px 20px;
 }
 .hash {
-    color: #454545;
+  color: #454545;
 }
 .content {
-    flex: 1 0 auto;
-  }
+  flex: 1 0 auto;
+}
 footer {
-    font-family: 'Ubuntu', sans-serif;
-    color:white;
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100px;
-    background: rgb(0,139,249);
-    background: -moz-linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
-    background: -webkit-linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
-    background: linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008bf9",endColorstr="#fcb045",GradientType=1);
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100px;
+  background: rgb(0, 139, 249);
+  background: -moz-linear-gradient(
+    59deg,
+    rgba(0, 139, 249, 1) 0%,
+    rgba(29, 222, 253, 1) 100%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    59deg,
+    rgba(0, 139, 249, 1) 0%,
+    rgba(29, 222, 253, 1) 100%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: linear-gradient(
+    59deg,
+    rgba(0, 139, 249, 1) 0%,
+    rgba(29, 222, 253, 1) 100%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008bf9",endColorstr="#fcb045",GradientType=1);
 }
 
 #menuBar {
-    display: flex;
-    flex-direction: row;
-    font-family: 'Ubuntu', sans-serif;
-    color:white;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-weight: 700;
-    
-    
-    /* menubar gradient */
-    background: rgb(0,139,249);
-    background: -moz-linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
-    background: -webkit-linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
-    background: linear-gradient(59deg, rgba(0,139,249,1) 0%, rgba(29,222,253,1) 100%, rgba(252,176,69,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008bf9",endColorstr="#fcb045",GradientType=1);
+  display: flex;
+  flex-direction: row;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 700;
+
+  /* menubar gradient */
+  background: rgb(0, 139, 249);
+  background: -moz-linear-gradient(
+    59deg,
+    rgba(0, 139, 249, 1) 0%,
+    rgba(29, 222, 253, 1) 100%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    59deg,
+    rgba(0, 139, 249, 1) 0%,
+    rgba(29, 222, 253, 1) 100%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: linear-gradient(
+    59deg,
+    rgba(0, 139, 249, 1) 0%,
+    rgba(29, 222, 253, 1) 100%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#008bf9",endColorstr="#fcb045",GradientType=1);
 }
 
 .module {
-    display: flex;
-    font-family: 'Ubuntu', sans-serif;
-    color:white;
-    background-color: #454545;
- padding-top: 15px;
- padding-bottom: 15px;
- padding-left: 10px;
- margin-bottom: 10px;
- margin-top: 10px;
- max-height: 25px !important;
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  background-color: #454545;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  max-height: 25px !important;
 }
-.fade-in{
-    
+.fade-in {
 }
 
 .error {
-    display:flex;
-    font-family: 'Ubuntu', sans-serif;
-    color: white;
-   justify-content: center;
-    padding: 25px;
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  justify-content: center;
+  padding: 25px;
 }
 .name {
-    flex-basis: 200px;
+  min-width: 200px;
 }
 
 .id {
-    flex-basis: 50px;
+  min-width: 50px;
 }
 
 .mode {
-    flex-basis: 125px;
+  min-width: 125px;
 }
 
 .pid {
-    flex-basis: 75px;
+  min-width: 75px;
 }
 
 .status {
-    flex-basis: 100px;
+  min-width: 100px;
 }
 
 .restarts {
-flex-basis: 100px; 
+  min-width: 100px;
 }
 
 .uptime {
-    flex-basis: 125px;
+  min-width: 125px;
 }
 .cpu {
-    flex-basis: 75px;
+  min-width: 75px;
 }
 .mem {
-    flex-basis: 100px;
+  min-width: 100px;
 }
 
 .btn {
-   /* margin-left: auto; */
-   padding-right: 5vw;
-
-
-
+  /* margin-left: auto; */
+  padding-right: 5vw;
 }
-
-
-

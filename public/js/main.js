@@ -1,9 +1,16 @@
+/*eslint no-console: ["error", { allow: ["warn", "error", "log"] }] */
 /* global document, axios */
 
-var app = (function() {
+var app = (function () {
+    
     'use strict';
 
     var appVar = [];
+    var socket = new WebSocket('ws://192.168.1.10:8990');
+
+    socket.addEventListener('message', function(event) { // event.data
+        
+    });
 
     function Module(arrNum, name, id, mode, pid, status, restarts, uptime, cpu, mem) {
         this.arrNum = arrNum;
@@ -45,34 +52,19 @@ var app = (function() {
             modeSpan.classList = 'mode';
             pidSpan.innerText = this.pid;
             pidSpan.classList = 'pid';
-            //statusSpan.innerText = this.status;
             statusSpan.classList = 'status';
             restartsSpan.innerText = this.restarts;
             restartsSpan.classList = 'restarts';
-            //uptimeSpan.innerText = this.uptime;
             uptimeSpan.classList = 'uptime';
-            //cpuSpan.innerText = this.cpu + "%";
             cpuSpan.classList = 'cpu';
-            //memSpan.innerText = this.mem / 1000 + " kb";
             memSpan.classList = 'mem';
             btn1.innerText = 'Reload';
+            btnContainer.classList = 'btn';
 
-            btn1.addEventListener('click', function() {
-                axios.post('http://localhost:8989/api/post', {
-                    id: idSpan.innerText,
-                    action: 'reload'
-                });
-            });
+            btn1.addEventListener('click', function() {});
 
             btn2.innerText = 'Stop';
-            btn2.addEventListener('click', function() {
-                axios.post('http://localhost:8989/api/post', {
-                    id: idSpan.innerText,
-                    action: 'stop'
-                });
-            });
-
-            btnContainer.classList = 'btn';
+            btn2.addEventListener('click', function() {});
 
             content.appendChild(contents);
             contents.appendChild(nameSpan);
@@ -96,27 +88,9 @@ var app = (function() {
             var renderedCpu = document.querySelectorAll('.cpu');
             var renderedUptime = document.querySelectorAll('.uptime');
             var renderedStatus = document.querySelectorAll('.status');
-
             var passNum = this.arrNum;
 
-            this.dataCall = function() {
-                axios
-                    .get('http://192.168.1.10:8989/api/pm2')
-                    .then(function(response) {
-                        calledMem = response.data[passNum].monit.memory;
-                        calledCpu = response.data[passNum].monit.cpu;
-                        calledUptime = response.data[passNum].pm2_env.pm_uptime;
-                        calledStatus = response.data[passNum].pm2_env.status;
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                        var content = document.getElementById('content');
-                        var contents = document.createElement('h1');
-                        contents.classList = 'error';
-                        contents.innerText = error;
-                        content.appendChild(contents);
-                    });
-
+            // this.dataCall = function() {
                 renderedMem[passNum + 1].innerText = Math.trunc(calledMem / 1000000) + 'mb';
                 renderedCpu[passNum + 1].innerText = calledCpu + '%';
                 renderedUptime[passNum + 1].innerText = msToMin(calledUptime);
@@ -139,7 +113,7 @@ var app = (function() {
                     renderedStatus[passNum + 1].style.color = 'purple';
                 }
             };
-            setInterval(this.dataCall.bind(this), 500);
+            // setInterval(this.dataCall.bind(this), 500);
         }
     };
 
@@ -167,32 +141,4 @@ var app = (function() {
         return outString;
     }
 
-    axios
-        .get('http://192.168.1.10:8989/api/pm2')
-        .then(function(response) {
-            for (var i = 0; i < response.data.length; i++) {
-                var rd = response.data[i];
-                appVar[i] = new Module(
-                    i,
-                    rd.name,
-                    rd.pm_id,
-                    rd.pm2_env.exec_mode,
-                    rd.pid,
-                    rd.pm2_env.status,
-                    rd.pm2_env.restart_time,
-                    rd.pm2_env.pm_uptime,
-                    rd.monit.cpu,
-                    rd.monit.memory
-                );
-                appVar[i].makeElements();
-            }
-        })
-        .catch(function(error) {
-            console.log(error);
-            var content = document.getElementById('content');
-            var contents = document.createElement('h1');
-            contents.classList = 'error';
-            contents.innerText = error;
-            content.appendChild(contents);
-        });
-})(app);
+  
